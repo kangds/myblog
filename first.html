@@ -7,7 +7,7 @@
 div#container{width:500px}
 div#header {background-color:#99bbbb;float:center;}
 div#menu {height:200px;width:150px;float:left;}
-div#content {background-color:#EEEEEE;height:200px;width:350px;float:left;}
+div#content {background-color:#00bfff;float:right;}
 div#footer {background-color:#99bbbb;clear:both;text-align:center;}
 h1 {margin-bottom:0;}
 h2 {margin-bottom:0;font-size:18px;}
@@ -19,45 +19,30 @@ li {list-style:none;}
     <body>
     <body bgcolor="#00bfff">
       <div id="header">
-        <h1>　Welcome to blog <br>you can write your articles</h1>
+        <h1>　<p align="center">Welcome to blog <br>you can write your articles</h1>
         </p>
         </div>
 
+<a href="/index">发表文章</a>
+{% for article in article_doc%}
+<h2>{{article['title']}}</h2>
+<p>{{article['article']}}</p>
+<p>{{article['commit']}}</p>
+{%end%}
 
-<form method="post" action="/index">
-
-        <div id="header">
-        <p>
-          <button type="submit" value="article"action="/index.html">发表文章</button>
-        </p>
-        </div>
-        <p><img src="{{static_url('img/2.jpg')}}" alt="my blog" height="300" width="300"></p>
-        <div id="menu">
-    <p>        
-       {{title}}
-      </p>
-      </div>
-
-        <br>
-        <p>
-        {{article}}
-        </p>
-         <br>
-
-         <p>
-        {{commit}}
-        </p>
-
-</form>
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <div id="footer" >
         <p align="center">
         <script language=JavaScript> 
-today=new Date(); 
+today = new Date(); 
 function initArray(){ 
-this.length=initArray.arguments.length 
-for(var i=0;i<this.length;i++) 
-this[i+1]=initArray.arguments[i]} 
+this.length = initArray.arguments.length 
+for(var i = 0;i<this.length;i++) 
+this[i+1] = initArray.arguments[i]} 
 var d=new initArray( 
 "星期日", 
 "星期一", 
@@ -67,12 +52,12 @@ var d=new initArray(
 "星期五", 
 "星期六"); 
 document.write( 
-<font color=#FF6600 style='font-size:15pt;font-family:'宋体' '> , 
+"<font color=#FF6600 style='font-size:15pt;font-family:'宋体' '>" , 
 today.getYear()+1900,"年", 
 today.getMonth()+1,"月", 
 today.getDate(),"日 ", 
 d[today.getDay()+1], 
-</font>);
+"</font>");
 </script> 
 </p>
           <p align="center" >

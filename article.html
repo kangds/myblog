@@ -32,19 +32,19 @@ li {list-style:none;}
 
         <br>
         <p>
-        {{blog1}}
+        {{article}}
         </p>
          <br>
          <p>
            <img src="{{static_url('img/1.jpg')}}" alt="my blog" height="300" width="300">
          </p>
 
-        <form method="post" action="/">
+        <form method="post" action="/article">
         <p>
               <h3>commit:</h3>
-              <input type="text" class="txt"><br>
-
-        	<button type="submit" class="btn" value="send"action="/article">提交</button>
+              <input type="hidden" class="txt" name='title' value="{{title}}"><br>
+              <input type="text" class="txt" name='commit'><br>
+        	<button type="submit" class="btn" value="send">提交</button>
              <button type="reset" value="Reset">重置</button>
         </p>
 	

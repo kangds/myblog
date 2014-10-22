@@ -31,8 +31,9 @@ li {list-style:none;}
             <font color=#FF6600 style='font-size:15pt; '><b>title:</b></font>
 
             <br>
-            <input type="text" name="noun1" 
-            value="{{article_doc.get('title','') }}"><br>
+            
+            <input type="text" name="noun1" >
+            <br>
         </p> 
 
         <p><img src="{{static_url('img/12.gif')}}" alt="my blog" height="30" width="1000"></p>
@@ -40,10 +41,10 @@ li {list-style:none;}
         <p>
         <font color=#FF6600 style='font-size:15pt; '><b>article:</b></font>
          <br>  
-        <textarea type="text" name="blog1" rows="20" cols="100">{%raw article_doc.get('blog1','')%}</textarea><br>
+        <textarea type="text" name="blog1" rows="20" cols="100"></textarea><br>
         </p>
-        <button type="reset" value="Reset">reset</button>
-        <input type="submit" value="Save">
+        <button type="reset" value="Reset">重写</button>
+        <input type="submit" value="提交">
         </form>
 
          <br>
