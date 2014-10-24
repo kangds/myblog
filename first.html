@@ -19,15 +19,26 @@ li {list-style:none;}
     <body>
     <body bgcolor="#00bfff">
       <div id="header">
-        <h1>　<p align="center">Welcome to blog <br>you can write your articles</h1>
-        </p>
+        <h1>　<p align="center">Welcome to blog <br>you can write your articles</p></h1>
         </div>
 
+<div id=menu>
+        <p><img src="{{static_url('img/2.jpg')}}" alt="my blog" height="300" width="300"></p>
+        </div>
+
+<div align="center">
 <a href="/index">发表文章</a>
+</div>
+
+<div id=content>
+        <p><img src="{{static_url('img/55.jpg')}}" alt="my blog" height="300" width="300"></p>
+        </div>
+
+
 {% for article in article_doc%}
-<h2>{{article['title']}}</h2>
-<p>{{article['article']}}</p>
-<p>{{article['commit']}}</p>
+<h2>title:{{article['title']}}</h2>
+<p><h2>article:</h2>{{article['article']}}</p>
+<p><h2>commit:</h2>{{article['commit']}}</p>
 {%end%}
 
 <br>
