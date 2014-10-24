@@ -75,14 +75,15 @@ class IndexHandler(tornado.web.RequestHandler):
 
 class CommitHandler(tornado.web.RequestHandler):
     def post(self):
-        noun1 = self.get_argument('noun1','')
+        noun2 = self.get_argument('_id','')
+        noun1 = self.get_argument("noun1",'')
         blog1 = self.get_argument('blog1','')
         commit = self.get_argument('commit','')
         coll = self.application.db.blog
         article_doc = coll.find_one({"title":noun1})
         if article_doc:
-                 article_doc['article'] = blog1
                  article_doc['title'] = noun1
+                 article_doc['article'] = blog1
                  article_doc ['commit'] = commit
                  coll.save(article_doc)
                  print coll
